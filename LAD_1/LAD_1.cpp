@@ -16,9 +16,10 @@ struct Point {
     double y;         // Зависимая переменная
 };
 
-// RSS(b)= ∑∣Yi−A−B⋅Xi∣
 
 
+
+// RSS(b)= ∑∣Yi−A−B⋅Xi∣    где i = 1....N
 double rss(int N, double* Y, double* X, double A, double B) {
     double sum_rss = 0.0;
 
