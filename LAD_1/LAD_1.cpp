@@ -16,6 +16,24 @@ struct Point {
     double y;         // Зависимая переменная
 };
 
+// RSS(b)= ∑∣Yi−A−B⋅Xi∣
+
+
+double rss(int N, double* Y, double* X, double A, double B) {
+    double sum_rss = 0.0;
+
+    for (int i = 0; i < N; ++i) {
+        double Y_predicted = A + B * X[i];
+        double deviation = std::abs(Y[i] - Y_predicted);
+        sum_rss += deviation;
+    }
+
+    return sum_rss;
+}
+
+
+
+
 void printPoints(const vector<Point>& points) {
     cout << "Сгенерированные точки:" << endl;
     for (size_t i = 0; i < points.size(); ++i) {
